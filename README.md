@@ -11,7 +11,7 @@ No frameworks, no build tools, no server-side code required. It runs entirely in
 ## Live Website
 
 > Replace this with your actual deployed link once published, e.g.:
-> `https://your-username.github.io/alumni-directory/`
+> `https://juwpasds.github.io/`
 
 ---
 
