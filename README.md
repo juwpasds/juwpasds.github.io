@@ -4,9 +4,9 @@ The website loads alumni information from a CSV file and displays it after a com
 Live Website
 After publishing through GitHub Pages, the website link will look like:
 ```text
-https://your-github-username.github.io/your-repository-name/
+https://juwpasds.github.io/juwpasds/
 ```
-Replace the above link with your actual GitHub Pages URL after deployment.
+
 Features
 Login page with common User ID and password
 Alumni information loaded from `alumni.csv`
@@ -83,7 +83,7 @@ Click Save.
 Wait a few minutes for GitHub Pages to publish the site.
 Your website URL will look like:
 ```text
-https://your-github-username.github.io/repository-name/
+https://juwpasds.github.io/juwpasds/
 ```
 How to Update Alumni Data
 To update the alumni directory:
