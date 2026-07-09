@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni Directory | Weekend Masters in Applied Statistics and Data Science</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!--
+    ============================================================
+    SECURITY WARNING (read this before deploying!)
+    ------------------------------------------------------------
+    This is a STATIC website with a FRONT-END ONLY login screen.
+    It does NOT provide real security. Anyone with basic web
+    development knowledge can view app.js, read the hard-coded
+    User ID / Password, or open alumni.csv directly in the
+    browser and see all alumni data — with or without logging in.
+
+    Do NOT use this site for sensitive, private, or confidential
+    information. Only publish data that alumni have consented to
+    share publicly. See README.md for full details.
+    ============================================================
+  -->
+
+  <!-- ===================== LOGIN SCREEN ===================== -->
+  <section id="login-screen" class="login-screen">
+    <div class="login-card">
+      <h1 class="login-title">Alumni Directory</h1>
+      <p class="login-subtitle">
+        Weekend Masters in Applied Statistics and Data Science<br />
+        Jahangirnagar University
+      </p>
+
+      <form id="login-form" autocomplete="off">
+        <label for="user-id">User ID</label>
+        <input type="text" id="user-id" name="user-id" placeholder="Enter User ID" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required />
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <p id="login-error" class="login-error" hidden>Incorrect User ID or Password. Please try again.</p>
+      </form>
+
+      <p class="login-note">
+         See README.md for details.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN APP (hidden until login) ===================== -->
+  <div id="app" class="app" hidden>
+
+    <!-- A. Header -->
+    <header class="site-header">
+      <div class="header-content">
+        <div>
+          <h1>Weekend Masters in Applied Statistics and Data Science</h1>
+          <h2>Jahangirnagar University</h2>
+          <h3>Alumni Directory</h3>
+        </div>
+        <button id="logout-btn" class="btn btn-secondary">Logout</button>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- Loading / error states for CSV -->
+      <p id="csv-status" class="csv-status"></p>
+
+      <!-- B. Summary cards -->
+      <section id="summary-section" class="summary-section" aria-label="Summary statistics">
+        <div class="summary-grid" id="summary-grid">
+          <!-- Summary cards injected by app.js -->
+        </div>
+      </section>
+
+      <!-- C. Full spreadsheet-style table -->
+      <section class="table-section">
+        <details id="table-details" open>
+          <summary>Show full spreadsheet-style table</summary>
+          <div class="table-scroll-wrapper">
+            <table id="data-table" class="data-table">
+              <thead id="data-table-head"></thead>
+              <tbody id="data-table-body"></tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <!-- D. Search and filter section -->
+      <section class="filter-section" aria-label="Search and filter alumni">
+        <h2 class="section-title">Search &amp; Filter Alumni</h2>
+        <div class="filter-grid">
+
+          <div class="filter-field">
+            <label for="filter-batch">Batch Number</label>
+            <select id="filter-batch">
+              <option value="">All Batches</option>
+            </select>
+          </div>
+
+          <div class="filter-field" id="filter-employment-wrapper">
+            <label for="filter-employment">Employment Status</label>
+            <select id="filter-employment">
+              <option value="">All Statuses</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="filter-specialization">Specialization / Skills</label>
+            <input type="text" id="filter-specialization" placeholder="e.g. Machine Learning, R, Python" />
+          </div>
+
+          <div class="filter-field">
+            <label for="filter-keyword">Keyword Search (all fields)</label>
+            <input type="text" id="filter-keyword" placeholder="Search name, email, company, etc." />
+          </div>
+
+        </div>
+
+        <div class="filter-actions">
+          <button id="clear-filters-btn" class="btn btn-secondary">Clear Filters</button>
+          <span id="filter-result-count" class="filter-result-count"></span>
+        </div>
+      </section>
+
+      <!-- E. Alumni profile cards -->
+      <section class="cards-section" aria-label="Alumni profile cards">
+        <div id="cards-grid" class="cards-grid">
+          <!-- Alumni cards injected by app.js -->
+        </div>
+        <p id="no-results-msg" class="no-results-msg" hidden>No alumni match the current filters.</p>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Weekend Masters in Applied Statistics and Data Science &mdash; Jahangirnagar University Alumni Directory</p>
+      <p class="footer-warning">
+        This site uses a front-end only login. Do not treat it as a secure system.
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
